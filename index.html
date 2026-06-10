@@ -158,11 +158,9 @@
     .product-photo {
       position: relative;
       width: 100%;
-      aspect-ratio: 4/3;
+      height: 100svh;
+      min-height: 500px;
       overflow: hidden;
-    }
-    @media (min-width: 780px) {
-      .product-photo { aspect-ratio: 16/7; }
     }
 
     .product-photo img {
@@ -175,17 +173,7 @@
     }
     .product-photo:hover img { transform: scale(1.03); }
 
-    /* Colour tint overlay keyed to product */
-    .product-photo::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      opacity: .35;
-    }
-    .negre  .product-photo::after { background: var(--c-negre); }
-    .blanc  .product-photo::after { background: var(--c-blanc); }
-    .zero   .product-photo::after { background: var(--c-zero); }
-    .ratafia .product-photo::after { background: var(--c-ratafia); }
+
 
     /* Accent bar at bottom of photo */
     .product-photo .accent-bar {
