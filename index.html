@@ -154,7 +154,14 @@
       grid-template-rows: auto auto;
     }
 
-    /* Photo fills full width, fixed height */
+    /* ── PRODUCT LAYOUT ─────────────────────────────── */
+
+    /* Mobile: stacked (photo top, text bottom) — unchanged */
+    .product {
+      display: block;
+    }
+
+    /* Photo fills full width on mobile */
     .product-photo {
       position: relative;
       width: 100%;
@@ -173,8 +180,6 @@
     }
     .product-photo:hover img { transform: scale(1.03); }
 
-
-
     /* Accent bar at bottom of photo */
     .product-photo .accent-bar {
       position: absolute;
@@ -186,6 +191,36 @@
     .zero    .accent-bar { background: var(--c-zero); }
     .ratafia .accent-bar { background: var(--c-ratafia); }
 
+    /* Desktop: two columns */
+    @media (min-width: 780px) {
+      .product {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 100svh;
+      }
+
+      /* Text col */
+      .product-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        order: 1;
+      }
+
+      /* Photo col */
+      .product-photo {
+        height: 100svh;
+        order: 2;
+      }
+
+      /* Bottle image: contain so it's never cropped */
+      .product-photo img {
+        object-fit: contain;
+        object-position: center;
+        background: var(--ink2);
+      }
+    }
+
     /* Text block */
     .product-info {
       background: var(--ink2);
@@ -193,22 +228,11 @@
     }
     @media (min-width: 780px) {
       .product-info {
-        padding: 4rem 8vw;
-        max-width: 820px;
+        padding: 4rem 5vw 4rem 6vw;
       }
     }
 
     .product-label {
-      font-size: .58rem;
-      letter-spacing: .3em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: .7rem;
-    }
-    .negre   .product-label { color: #C05050; }
-    .blanc   .product-label { color: #5A9A70; }
-    .zero    .product-label { color: #4A80AA; }
-    .ratafia .product-label { color: #C06030; }
 
     .product-name {
       font-family: 'Playfair Display', serif;
