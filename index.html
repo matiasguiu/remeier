@@ -3,7 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Remeier — Original de La Ràpita</title>
+  <title>Remeier — Vermut i Aperitius Artesans del Penedès</title>
+  <meta name="description" content="Remeier elabora vermut negre, vermut blanc, aperitiu 0,0% i ratafia de vi amb més d'un 75% de vi del Penedès. Productes vegans, baixos en sucres, inspirats en receptes del segle XIX. Original de La Ràpita, Santa Margarida i els Monjos." />
+  <meta name="keywords" content="vermut artesà, vermut Penedès, vermut negre, vermut blanc, aperitiu sense alcohol, ratafia de vi, Remeier, La Ràpita, Maieutike Winery, vermut vegà" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.remeier.com/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.remeier.com/" />
+  <meta property="og:title" content="Remeier — Vermut i Aperitius Artesans del Penedès" />
+  <meta property="og:description" content="Vermut negre, vermut blanc, aperitiu 0,0% i ratafia de vi. Més d'un 75% de vi del Penedès. Vegà, baix en sucres. Original de La Ràpita." />
+  <meta property="og:image" content="https://www.remeier.com/assets/image1.jpg" />
+  <meta property="og:locale" content="ca_ES" />
+  <meta property="og:site_name" content="Remeier" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Remeier — Vermut i Aperitius Artesans del Penedès" />
+  <meta name="twitter:description" content="Vermut negre, vermut blanc, aperitiu 0,0% i ratafia de vi. Més d'un 75% de vi del Penedès." />
+  <meta name="twitter:image" content="https://www.remeier.com/assets/image1.jpg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Remeier",
+    "url": "https://www.remeier.com",
+    "logo": "https://www.remeier.com/assets/image1.jpg",
+    "description": "Elaboradors de vermut artesà i aperitius amb base vínica al Penedès.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Avinguda Penedès, 31",
+      "addressLocality": "Santa Margarida i els Monjos",
+      "addressRegion": "Catalunya",
+      "postalCode": "08730",
+      "addressCountry": "ES"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "info@novavins.com"
+    },
+    "sameAs": ["https://www.instagram.com/elremeier"]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
@@ -13,13 +55,11 @@
 
     :root {
       --copper:   #B87333;
-      --crimson:  #8B1A1A;
       --cream:    #F5EFE6;
       --cream2:   #D9CFBF;
       --ink:      #0D0B09;
       --ink2:     #171210;
       --muted:    #7A706A;
-
       --c-negre:  #8B1A1A;
       --c-blanc:  #2E6040;
       --c-zero:   #1A4A6B;
@@ -63,6 +103,11 @@
       color: var(--cream);
       text-decoration: none;
     }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
     .nav-links { display: flex; gap: 1.75rem; list-style: none; }
     .nav-links a {
       font-size: .62rem;
@@ -73,6 +118,37 @@
       transition: color .2s;
     }
     .nav-links a:hover { color: var(--copper); }
+
+    /* ── LANG SWITCHER ───────────────────────────── */
+    .lang-switcher {
+      display: flex;
+      gap: .4rem;
+      align-items: center;
+    }
+    .lang-btn {
+      font-family: 'Lato', sans-serif;
+      font-size: .58rem;
+      font-weight: 400;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--cream2);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: .25rem .1rem;
+      transition: color .2s;
+      line-height: 1;
+    }
+    .lang-btn:hover { color: var(--copper); }
+    .lang-btn.active {
+      color: var(--copper);
+      border-bottom: 1px solid var(--copper);
+    }
+    .lang-sep {
+      font-size: .5rem;
+      color: var(--muted);
+      line-height: 1;
+    }
 
     @media (max-width: 600px) {
       .nav-links { display: none; }
@@ -90,7 +166,6 @@
       padding-bottom: 9svh;
       overflow: hidden;
     }
-
     #hero-bg {
       position: absolute;
       inset: 0;
@@ -108,7 +183,6 @@
         rgba(13,11,9,.92) 100%
       );
     }
-
     .hero-body {
       position: relative;
       z-index: 2;
@@ -148,30 +222,15 @@
     }
 
     /* ── PRODUCT SECTIONS ────────────────────────── */
-    /*
-      Mobile:  image full-screen on top, text block below
-      Desktop: side-by-side, image 50vw height 100vh, text fills the other half
-      Alternating: even products → image left; odd → image right
-    */
-
     .product {
       display: flex;
-      flex-direction: column;   /* mobile: stacked */
+      flex-direction: column;
     }
-
-    /* Desktop: two columns */
     @media (min-width: 780px) {
-      .product {
-        flex-direction: row;
-        min-height: 100svh;
-      }
-      /* odd products: image right */
-      .product.alt {
-        flex-direction: row-reverse;
-      }
+      .product { flex-direction: row; min-height: 100svh; }
+      .product.alt { flex-direction: row-reverse; }
     }
 
-    /* Photo pane */
     .product-photo {
       position: relative;
       width: 100%;
@@ -180,26 +239,17 @@
       overflow: hidden;
       flex-shrink: 0;
     }
-
     @media (min-width: 780px) {
-      .product-photo {
-        width: 50%;
-        height: auto;   /* stretches to row height */
-        min-height: 100svh;
-      }
+      .product-photo { width: 50%; height: auto; min-height: 100svh; }
     }
-
     .product-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
       display: block;
       transition: transform .9s ease;
     }
     .product-photo:hover img { transform: scale(1.03); }
 
-    /* Accent bar */
     .product-photo .accent-bar {
       position: absolute;
       bottom: 0; left: 0; right: 0;
@@ -210,7 +260,6 @@
     .zero    .accent-bar { background: var(--c-zero); }
     .ratafia .accent-bar { background: var(--c-ratafia); }
 
-    /* Text pane */
     .product-info {
       background: var(--ink2);
       padding: 3rem 2rem 3.5rem;
@@ -218,19 +267,14 @@
       flex-direction: column;
       justify-content: center;
     }
-
     @media (min-width: 780px) {
-      .product-info {
-        width: 50%;
-        padding: 4rem 6vw;
-      }
+      .product-info { width: 50%; padding: 4rem 6vw; }
     }
 
     .product-label {
       font-size: .58rem;
       letter-spacing: .3em;
       text-transform: uppercase;
-      color: var(--muted);
       margin-bottom: .7rem;
     }
     .negre   .product-label { color: #C05050; }
@@ -246,10 +290,8 @@
       color: var(--cream);
       margin-bottom: 1.4rem;
     }
-
     .product-rule {
-      width: 36px;
-      height: 1px;
+      width: 36px; height: 1px;
       margin-bottom: 1.6rem;
     }
     .negre   .product-rule { background: var(--c-negre); }
@@ -265,7 +307,6 @@
       max-width: 560px;
       margin-bottom: 1.6rem;
     }
-
     .product-memory {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
@@ -273,12 +314,7 @@
       color: var(--muted);
       margin-bottom: 2rem;
     }
-
-    .product-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .5rem;
-    }
+    .product-tags { display: flex; flex-wrap: wrap; gap: .5rem; }
     .tag {
       font-size: .58rem;
       letter-spacing: .15em;
@@ -295,7 +331,6 @@
       padding: 5.5rem 2rem 3rem;
       text-align: center;
     }
-
     .contact-name {
       font-family: 'Playfair Display', serif;
       font-size: clamp(1.8rem, 6vw, 3rem);
@@ -311,14 +346,11 @@
       letter-spacing: .08em;
       margin-bottom: 2.5rem;
     }
-
     .contact-line {
-      width: 1px;
-      height: 44px;
+      width: 1px; height: 44px;
       background: rgba(184,115,51,.25);
       margin: 0 auto 2rem;
     }
-
     .contact-mail {
       font-size: .7rem;
       letter-spacing: .18em;
@@ -330,7 +362,6 @@
       transition: color .2s, border-color .2s;
     }
     .contact-mail:hover { color: var(--copper); border-color: var(--copper); }
-
     .contact-address {
       font-family: 'Cormorant Garamond', serif;
       font-size: .9rem;
@@ -338,19 +369,14 @@
       color: var(--muted);
       margin-bottom: 1.5rem;
     }
-
     .socials {
-      display: flex;
-      justify-content: center;
-      gap: 1.2rem;
-      margin-top: 2rem;
+      display: flex; justify-content: center; gap: 1.2rem; margin-top: 2rem;
     }
     .socials a {
       width: 38px; height: 38px;
       border: 1px solid rgba(184,115,51,.25);
       display: flex; align-items: center; justify-content: center;
-      color: var(--cream2);
-      text-decoration: none;
+      color: var(--cream2); text-decoration: none;
       transition: border-color .2s, color .2s;
     }
     .socials a:hover { border-color: var(--copper); color: var(--copper); }
@@ -371,18 +397,13 @@
     }
 
     /* ── REVEAL ──────────────────────────────────── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity .7s ease, transform .7s ease;
-    }
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.in { opacity: 1; transform: none; }
     .d1 { transition-delay: .1s; }
     .d2 { transition-delay: .2s; }
     .d3 { transition-delay: .3s; }
     .d4 { transition-delay: .4s; }
 
-    /* ── KEYFRAMES ───────────────────────────────── */
     @keyframes riseIn {
       from { opacity: 0; transform: translateY(24px); }
       to   { opacity: 1; transform: none; }
@@ -394,138 +415,118 @@
 <!-- NAV -->
 <nav id="nav">
   <a href="#hero" class="nav-brand">Remeier</a>
-  <ul class="nav-links">
-    <li><a href="#vermut-negre">Vermut Negre</a></li>
-    <li><a href="#vermut-blanc">Vermut Blanc</a></li>
-    <li><a href="#aperitiu-zero">Aperitiu 0,0%</a></li>
-    <li><a href="#ratafia">Ratafia</a></li>
-    <li><a href="#contacte">Contacte</a></li>
-  </ul>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#vermut-negre" data-i18n="nav.negre">Vermut Negre</a></li>
+      <li><a href="#vermut-blanc" data-i18n="nav.blanc">Vermut Blanc</a></li>
+      <li><a href="#aperitiu-zero" data-i18n="nav.zero">Aperitiu 0,0%</a></li>
+      <li><a href="#ratafia" data-i18n="nav.ratafia">Ratafia</a></li>
+      <li><a href="#contacte" data-i18n="nav.contact">Contacte</a></li>
+    </ul>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="ca">CA</button>
+      <span class="lang-sep">·</span>
+      <button class="lang-btn" data-lang="es">ES</button>
+      <span class="lang-sep">·</span>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </div>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
   <div id="hero-bg"></div>
   <div class="hero-body">
-    <p class="hero-kicker">Original de La Ràpita · Penedès</p>
+    <p class="hero-kicker" data-i18n="hero.kicker">Original de La Ràpita · Penedès</p>
     <h1 class="hero-name">Remeier</h1>
     <div class="hero-rule"></div>
-    <p class="hero-slogan">L'essència de les herbes mediterrànies en clau de vi</p>
+    <p class="hero-slogan" data-i18n="hero.slogan">L'essència de les herbes mediterrànies en clau de vi</p>
   </div>
 </section>
 
-<!-- VERMUT NEGRE — imatge esquerra -->
+<!-- VERMUT NEGRE -->
 <section id="vermut-negre" class="product negre">
   <div class="product-photo">
     <img src="assets/image2.jpg" alt="Remeier Vermut Negre" loading="lazy" />
     <div class="accent-bar"></div>
   </div>
   <div class="product-info">
-    <p class="product-label reveal">Aperitiu a Base de Vi · 15% Alc.</p>
-    <h2 class="product-name reveal d1">Vermut Negre</h2>
+    <p class="product-label reveal" data-i18n="negre.label">Aperitiu a Base de Vi · 15% Alc.</p>
+    <h2 class="product-name reveal d1" data-i18n="negre.name">Vermut Negre</h2>
     <div class="product-rule reveal d1"></div>
-    <p class="product-desc reveal d2">
-      Jove i mediterrani, el Vermut Negre del Remeier neix de la maceració
-      d'espígol, farigola i donzell en vi blanc del territori. Un vermut elegant,
-      fresc, llarg i inspirat en una recepta ancestral del segle XIX, elaborat en clau vegana.
-    </p>
-    <p class="product-memory reveal d3">
-      "Una passejada pels boscos del Penedès."
-    </p>
+    <p class="product-desc reveal d2" data-i18n="negre.desc">Jove i mediterrani, el Vermut Negre del Remeier neix de la maceració d'espígol, farigola i donzell en vi blanc del territori. Un vermut elegant, fresc, llarg i inspirat en una recepta ancestral del segle XIX, elaborat en clau vegana.</p>
+    <p class="product-memory reveal d3" data-i18n="negre.memory">"Una passejada pels boscos del Penedès."</p>
     <div class="product-tags reveal d4">
-      <span class="tag">+75% Vi del Penedès</span>
+      <span class="tag" data-i18n="tag.wine">+75% Vi del Penedès</span>
       <span class="tag">15% Alc.</span>
-      <span class="tag">Baix en sucres</span>
-      <span class="tag">Vegà</span>
+      <span class="tag" data-i18n="tag.lowsugar">Baix en sucres</span>
+      <span class="tag" data-i18n="tag.vegan">Vegà</span>
       <span class="tag">🥇 Gran Or · Vinari 2022</span>
     </div>
   </div>
 </section>
 
-<!-- VERMUT BLANC — imatge dreta -->
+<!-- VERMUT BLANC -->
 <section id="vermut-blanc" class="product blanc alt">
   <div class="product-photo">
     <img src="assets/image3.jpg" alt="Remeier Vermut Blanc" loading="lazy" />
     <div class="accent-bar"></div>
   </div>
   <div class="product-info">
-    <p class="product-label reveal">Aperitiu a Base de Vi · 15% Alc.</p>
-    <h2 class="product-name reveal d1">Vermut Blanc</h2>
+    <p class="product-label reveal" data-i18n="blanc.label">Aperitiu a Base de Vi · 15% Alc.</p>
+    <h2 class="product-name reveal d1" data-i18n="blanc.name">Vermut Blanc</h2>
     <div class="product-rule reveal d1"></div>
-    <p class="product-desc reveal d2">
-      Elegant i d'estil refinat, el Vermut Blanc destaca per la delicadesa
-      de la flor de saüc, la llimona i la presència discreta del donzell. Lleuger, llarg
-      en boca i molt poc apegalós: el vermut blanc menys típic del mercat.
-      Elaborat íntegrament amb vi blanc del territori com a base principal.
-    </p>
-    <p class="product-memory reveal d3">
-      "Una excursió pels fons humits del Garraf."
-    </p>
+    <p class="product-desc reveal d2" data-i18n="blanc.desc">Elegant i d'estil refinat, el Vermut Blanc destaca per la delicadesa de la flor de saüc, la llimona i la presència discreta del donzell. Lleuger, llarg en boca i molt poc apegalós: el vermut blanc menys típic del mercat. Elaborat íntegrament amb vi blanc del territori com a base principal.</p>
+    <p class="product-memory reveal d3" data-i18n="blanc.memory">"Una excursió pels fons humits del Garraf."</p>
     <div class="product-tags reveal d4">
-      <span class="tag">+75% Vi del Penedès</span>
+      <span class="tag" data-i18n="tag.wine">+75% Vi del Penedès</span>
       <span class="tag">15% Alc.</span>
-      <span class="tag">Baix en sucres</span>
-      <span class="tag">Vegà</span>
+      <span class="tag" data-i18n="tag.lowsugar">Baix en sucres</span>
+      <span class="tag" data-i18n="tag.vegan">Vegà</span>
       <span class="tag">🥇 Or · Vinari 2026</span>
     </div>
   </div>
 </section>
 
-<!-- APERITIU 0,0% — imatge esquerra -->
+<!-- APERITIU 0,0% -->
 <section id="aperitiu-zero" class="product zero">
   <div class="product-photo">
     <img src="assets/image4.jpg" alt="Remeier Aperitiu 0,0%" loading="lazy" />
     <div class="accent-bar"></div>
   </div>
   <div class="product-info">
-    <p class="product-label reveal">Aperitiu Sense Alcohol · 0,0% Alc.</p>
-    <h2 class="product-name reveal d1">Aperitiu 0,0%</h2>
+    <p class="product-label reveal" data-i18n="zero.label">Aperitiu Sense Alcohol · 0,0% Alc.</p>
+    <h2 class="product-name reveal d1" data-i18n="zero.name">Aperitiu 0,0%</h2>
     <div class="product-rule reveal d1"></div>
-    <p class="product-desc reveal d2">
-      Les mateixes plantes mediterrànies — taronja, espígol i donzell —,
-      el mateix caràcter, però sense alcohol. La infusió botànica es fa
-      a 65 °C durant 12 hores per preservar tots els aromes sense necessitat
-      de destil·lació. La base és most de raïm concentrat i caramel.
-      Un aperitiu que no renuncia a res.
-    </p>
-    <p class="product-memory reveal d3">
-      "Un diumenge tranquil, al migdia, en una terrassa."
-    </p>
+    <p class="product-desc reveal d2" data-i18n="zero.desc">Les mateixes plantes mediterrànies — taronja, espígol i donzell —, el mateix caràcter, però sense alcohol. La infusió botànica es fa a 65 °C durant 12 hores per preservar tots els aromes sense necessitat de destil·lació. La base és most de raïm concentrat i caramel. Un aperitiu que no renuncia a res.</p>
+    <p class="product-memory reveal d3" data-i18n="zero.memory">"Un diumenge tranquil, al migdia, en una terrassa."</p>
     <div class="product-tags reveal d4">
-      <span class="tag">Base de Most</span>
+      <span class="tag" data-i18n="tag.must">Base de Most</span>
       <span class="tag">0,0% Alc.</span>
-      <span class="tag">Vegà</span>
+      <span class="tag" data-i18n="tag.nopreservatives">Sense conservants</span>
+      <span class="tag" data-i18n="tag.vegan">Vegà</span>
       <span class="tag">🥈 Plata · Vinari 2026</span>
     </div>
   </div>
 </section>
 
-<!-- RATAFIA DE VI — imatge dreta -->
+<!-- RATAFIA DE VI -->
 <section id="ratafia" class="product ratafia alt">
   <div class="product-photo">
     <img src="assets/image5.jpg" alt="Remeier Ratafia de Vi" loading="lazy" />
     <div class="accent-bar"></div>
   </div>
   <div class="product-info">
-    <p class="product-label reveal">Digestiu a Base de Vi · 20% Alc.</p>
-    <h2 class="product-name reveal d1">Ratafia de Vi</h2>
+    <p class="product-label reveal" data-i18n="ratafia.label">Digestiu a Base de Vi · 20% Alc.</p>
+    <h2 class="product-name reveal d1" data-i18n="ratafia.name">Ratafia de Vi</h2>
     <div class="product-rule reveal d1"></div>
-    <p class="product-desc reveal d2">
-      Elaborada macerant plantes i espècies — anís estrellat, canyella,
-      nou moscada i clau — directament en vi blanc d'alt grau. Els aromes
-      anisats no provenen d'anís destil·lat, sinó de la maceració en vi,
-      acompanyats d'un macerat de nou verda i menta fresca. Un digestiu que
-      viatja entre les tradicions catalana, francesa i italiana. Perquè la
-      ratafia és la pipa de la pau del Mediterrani.
-    </p>
-    <p class="product-memory reveal d3">
-      "La pastisseria de tota la vida."
-    </p>
+    <p class="product-desc reveal d2" data-i18n="ratafia.desc">Elaborada macerant plantes i espècies — anís estrellat, canyella, nou moscada i clau — directament en vi blanc d'alt grau. Els aromes anisats no provenen d'anís destil·lat, sinó de la maceració en vi, acompanyats d'un macerat de nou verda i menta fresca. Un digestiu que viatja entre les tradicions catalana, francesa i italiana. Perquè la ratafia és la pipa de la pau del Mediterrani.</p>
+    <p class="product-memory reveal d3" data-i18n="ratafia.memory">"La pastisseria de tota la vida."</p>
     <div class="product-tags reveal d4">
-      <span class="tag">+75% Vi del Penedès</span>
+      <span class="tag" data-i18n="tag.wine">+75% Vi del Penedès</span>
       <span class="tag">20% Alc.</span>
-      <span class="tag">Anís macerat en vi</span>
-      <span class="tag">Vegà</span>
+      <span class="tag" data-i18n="tag.anise">Anís macerat en vi</span>
+      <span class="tag" data-i18n="tag.vegan">Vegà</span>
     </div>
   </div>
 </section>
@@ -533,7 +534,7 @@
 <!-- CONTACTE -->
 <section id="contacte">
   <p class="contact-name reveal">REMEIER</p>
-  <p class="contact-origin reveal d1">Original de La Ràpita</p>
+  <p class="contact-origin reveal d1" data-i18n="contact.origin">Original de La Ràpita</p>
   <div class="contact-line reveal d1"></div>
   <p class="contact-address reveal d2">
     Maieutiké Winery · Avinguda Penedès, 31<br>
@@ -550,23 +551,154 @@
   </div>
   <div class="footer-note">
     <span>© 2026 Maieutike Winery S.L.</span>
-    <span>Consumeix amb responsabilitat</span>
+    <span data-i18n="footer.responsible">Consumeix amb responsabilitat</span>
   </div>
 </section>
 
 <script>
-  // Nav scroll
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('on', scrollY > 50);
-  }, { passive: true });
+// ── TRADUCCIONS ───────────────────────────────────────────────────────────────
+const i18n = {
+  ca: {
+    "nav.negre":    "Vermut Negre",
+    "nav.blanc":    "Vermut Blanc",
+    "nav.zero":     "Aperitiu 0,0%",
+    "nav.ratafia":  "Ratafia",
+    "nav.contact":  "Contacte",
+    "hero.kicker":  "Original de La Ràpita · Penedès",
+    "hero.slogan":  "L'essència de les herbes mediterrànies en clau de vi",
+    "negre.label":  "Aperitiu a Base de Vi · 15% Alc.",
+    "negre.name":   "Vermut Negre",
+    "negre.desc":   "Jove i mediterrani, el Vermut Negre del Remeier neix de la maceració d'espígol, farigola i donzell en vi blanc del territori. Un vermut elegant, fresc, llarg i inspirat en una recepta ancestral del segle XIX, elaborat en clau vegana.",
+    "negre.memory": "\"Una passejada pels boscos del Penedès.\"",
+    "blanc.label":  "Aperitiu a Base de Vi · 15% Alc.",
+    "blanc.name":   "Vermut Blanc",
+    "blanc.desc":   "Elegant i d'estil refinat, el Vermut Blanc destaca per la delicadesa de la flor de saüc, la llimona i la presència discreta del donzell. Lleuger, llarg en boca i molt poc apegalós: el vermut blanc menys típic del mercat. Elaborat íntegrament amb vi blanc del territori com a base principal.",
+    "blanc.memory": "\"Una excursió pels fons humits del Garraf.\"",
+    "zero.label":   "Aperitiu Sense Alcohol · 0,0% Alc.",
+    "zero.name":    "Aperitiu 0,0%",
+    "zero.desc":    "Les mateixes plantes mediterrànies — taronja, espígol i donzell —, el mateix caràcter, però sense alcohol. La infusió botànica es fa a 65 °C durant 12 hores per preservar tots els aromes sense necessitat de destil·lació. La base és most de raïm concentrat i caramel. Un aperitiu que no renuncia a res.",
+    "zero.memory":  "\"Un diumenge tranquil, al migdia, en una terrassa.\"",
+    "ratafia.label":"Digestiu a Base de Vi · 20% Alc.",
+    "ratafia.name": "Ratafia de Vi",
+    "ratafia.desc": "Elaborada macerant plantes i espècies — anís estrellat, canyella, nou moscada i clau — directament en vi blanc d'alt grau. Els aromes anisats no provenen d'anís destil·lat, sinó de la maceració en vi, acompanyats d'un macerat de nou verda i menta fresca. Un digestiu que viatja entre les tradicions catalana, francesa i italiana. Perquè la ratafia és la pipa de la pau del Mediterrani.",
+    "ratafia.memory":"\"La pastisseria de tota la vida.\"",
+    "contact.origin":"Original de La Ràpita",
+    "tag.wine":     "+75% Vi del Penedès",
+    "tag.lowsugar": "Baix en sucres",
+    "tag.vegan":    "Vegà",
+    "tag.must":     "Base de Most",
+    "tag.nopreservatives": "Sense conservants",
+    "tag.anise":    "Anís macerat en vi",
+    "footer.responsible": "Consumeix amb responsabilitat"
+  },
+  es: {
+    "nav.negre":    "Vermut Rojo",
+    "nav.blanc":    "Vermut Blanco",
+    "nav.zero":     "Aperitivo 0,0%",
+    "nav.ratafia":  "Ratafia",
+    "nav.contact":  "Contacto",
+    "hero.kicker":  "Original de La Ràpita · Penedès",
+    "hero.slogan":  "La esencia de las hierbas mediterráneas en clave de vino",
+    "negre.label":  "Aperitivo a Base de Vino · 15% Alc.",
+    "negre.name":   "Vermut Rojo",
+    "negre.desc":   "Joven y mediterráneo, el Vermut Rojo de Remeier nace de la maceración de espliego, tomillo y ajenjo en vino blanco del territorio. Un vermut elegante, fresco, largo e inspirado en una receta ancestral del siglo XIX, elaborado de manera vegana.",
+    "negre.memory": "\"Un paseo por los bosques del Penedès.\"",
+    "blanc.label":  "Aperitivo a Base de Vino · 15% Alc.",
+    "blanc.name":   "Vermut Blanco",
+    "blanc.desc":   "Elegante y de estilo refinado, el Vermut Blanco destaca por la delicadeza de la flor de saúco, el limón y la presencia discreta del ajenjo. Ligero, largo en boca y muy poco pegajoso: el vermut blanco menos típico del mercado. Elaborado íntegramente con vino blanco del territorio como base principal.",
+    "blanc.memory": "\"Una excursión por los fondos húmedos del Garraf.\"",
+    "zero.label":   "Aperitivo Sin Alcohol · 0,0% Alc.",
+    "zero.name":    "Aperitivo 0,0%",
+    "zero.desc":    "Las mismas plantas mediterráneas — naranja, espliego y ajenjo —, el mismo carácter, pero sin alcohol. La infusión botánica se realiza a 65 °C durante 12 horas para preservar todos los aromas sin necesidad de destilación. La base es mosto de uva concentrado y caramelo. Un aperitivo que no renuncia a nada.",
+    "zero.memory":  "\"Un domingo tranquilo, al mediodía, en una terraza.\"",
+    "ratafia.label":"Digestivo a Base de Vino · 20% Alc.",
+    "ratafia.name": "Ratafia de Vino",
+    "ratafia.desc": "Elaborada macerando plantas y especias — anís estrellado, canela, nuez moscada y clavo — directamente en vino blanco de alta graduación. Los aromas anisados no provienen de anís destilado, sino de la maceración en vino, acompañados de un macerado de nuez verde y menta fresca. Un digestivo que viaja entre las tradiciones catalana, francesa e italiana. Porque la ratafia es la pipa de la paz del Mediterráneo.",
+    "ratafia.memory":"\"La pastelería de toda la vida.\"",
+    "contact.origin":"Original de La Ràpita",
+    "tag.wine":     "+75% Vino del Penedès",
+    "tag.lowsugar": "Bajo en azúcares",
+    "tag.vegan":    "Vegano",
+    "tag.must":     "Base de Mosto",
+    "tag.nopreservatives": "Sin conservantes",
+    "tag.anise":    "Anís macerado en vino",
+    "footer.responsible": "Consume con responsabilidad"
+  },
+  en: {
+    "nav.negre":    "Red Vermouth",
+    "nav.blanc":    "White Vermouth",
+    "nav.zero":     "0.0% Aperitif",
+    "nav.ratafia":  "Ratafia",
+    "nav.contact":  "Contact",
+    "hero.kicker":  "Original from La Ràpita · Penedès",
+    "hero.slogan":  "The essence of Mediterranean herbs through the lens of wine",
+    "negre.label":  "Wine-Based Aperitif · 15% Alc.",
+    "negre.name":   "Red Vermouth",
+    "negre.desc":   "Young and Mediterranean, Remeier's Red Vermouth is born from the maceration of lavender, thyme and wormwood in white wine from the territory. An elegant, fresh, long vermouth inspired by a 19th-century ancestral recipe, crafted in a vegan style.",
+    "negre.memory": "\"A stroll through the forests of the Penedès.\"",
+    "blanc.label":  "Wine-Based Aperitif · 15% Alc.",
+    "blanc.name":   "White Vermouth",
+    "blanc.desc":   "Elegant and refined, the White Vermouth stands out for the delicacy of elderflower, lemon and the subtle presence of wormwood. Light, long on the palate and barely cloying: the least typical white vermouth on the market. Made entirely with white wine from the territory as its primary base.",
+    "blanc.memory": "\"A hike through the damp ravines of the Garraf.\"",
+    "zero.label":   "Alcohol-Free Aperitif · 0.0% Alc.",
+    "zero.name":    "0.0% Aperitif",
+    "zero.desc":    "The same Mediterranean botanicals — orange, lavender and wormwood —, the same character, but without alcohol. The botanical infusion is made at 65 °C for 12 hours to preserve all the aromas without distillation. The base is concentrated grape must and caramel. An aperitif that gives up nothing.",
+    "zero.memory":  "\"A quiet Sunday, at noon, on a terrace.\"",
+    "ratafia.label":"Wine-Based Digestif · 20% Alc.",
+    "ratafia.name": "Wine Ratafia",
+    "ratafia.desc": "Crafted by macerating botanicals and spices — star anise, cinnamon, nutmeg and cloves — directly in high-alcohol white wine. The anise aromas come not from distilled anise but from maceration in wine, accompanied by green walnut and fresh mint. A digestif that travels between the Catalan, French and Italian traditions. Because ratafia is the peace pipe of the Mediterranean.",
+    "ratafia.memory":"\"The neighbourhood bakery, every Sunday.\"",
+    "contact.origin":"Original from La Ràpita",
+    "tag.wine":     "+75% Penedès Wine",
+    "tag.lowsugar": "Low in sugar",
+    "tag.vegan":    "Vegan",
+    "tag.must":     "Grape Must Base",
+    "tag.nopreservatives": "No preservatives",
+    "tag.anise":    "Wine-macerated anise",
+    "footer.responsible": "Drink responsibly"
+  }
+};
 
-  // Scroll reveal
-  const els = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.1 });
-  els.forEach(el => io.observe(el));
+// ── APLICA LLENGUA ────────────────────────────────────────────────────────────
+function applyLang(lang) {
+  const dict = i18n[lang];
+  if (!dict) return;
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key] !== undefined) el.textContent = dict[key];
+  });
+
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+
+  localStorage.setItem('remeier-lang', lang);
+}
+
+// ── BOTONES DE LLENGUA ────────────────────────────────────────────────────────
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+});
+
+// Recupera la llengua guardada o usa CA per defecte
+const savedLang = localStorage.getItem('remeier-lang') || 'ca';
+applyLang(savedLang);
+
+// ── NAV SCROLL ────────────────────────────────────────────────────────────────
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('on', scrollY > 50);
+}, { passive: true });
+
+// ── SCROLL REVEAL ─────────────────────────────────────────────────────────────
+const els = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.1 });
+els.forEach(el => io.observe(el));
 </script>
 </body>
 </html>
