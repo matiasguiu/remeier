@@ -156,6 +156,24 @@
           { "@type": "PropertyValue", "name": "Espècies principals", "value": "Anís estrellat, anís verd, canyella, nou moscada, clau, nou verda, menta fresca" },
           { "@type": "PropertyValue", "name": "Vegà", "value": "Sí" }
         ]
+      },
+      {
+        "@type": "Product",
+        "@id": "https://www.remeier.com/#bag-in-box",
+        "name": "Remeier Fórmules Magistrals — Bag in Box 5L",
+        "alternateName": "Remeier Bag in Box HORECA",
+        "description": "Format professional Bag in Box de 5 litres per al canal HORECA. Disponible per al Vermut Negre, el Vermut Blanc i la Ratafia del Remeier. La bossa interior sense contacte amb l'aire manté el producte sempre fresc, servei rere servei.",
+        "brand": { "@id": "https://www.remeier.com/#organization" },
+        "manufacturer": { "@id": "https://www.remeier.com/#organization" },
+        "image": "https://www.remeier.com/assets/image6.jpg",
+        "category": "Format professional / HORECA",
+        "countryOfOrigin": "ES",
+        "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "EUR" },
+        "additionalProperty": [
+          { "@type": "PropertyValue", "name": "Format", "value": "Bag in Box 5L" },
+          { "@type": "PropertyValue", "name": "Canal", "value": "HORECA (bars i restaurants)" },
+          { "@type": "PropertyValue", "name": "Productes disponibles", "value": "Vermut Negre, Vermut Blanc, Ratafia de Vi" }
+        ]
       }
     ]
   }
@@ -246,6 +264,14 @@
           "@type": "Answer",
           "text": "El nom Remeier fa referència als remeiros, elaboradors tradicionals de begudes aromàtiques amb base vínica als segles XVII-XIX al Mediterrani. El projecte neix de la recerca de receptes en llibres remeiers del segle XIX, amb una mirada sostenible, moderna i vinícola."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "El Remeier té format per a bars i restaurants?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. El Vermut Negre, el Vermut Blanc i la Ratafia del Remeier estan disponibles en format Bag in Box de 5 litres per al canal HORECA. Aquest format manté el producte sempre fresc gràcies a la bossa interior sense contacte amb l'aire."
+        }
       }
     ]
   }
@@ -269,6 +295,7 @@
       --c-blanc:  #2E6040;
       --c-zero:   #1A4A6B;
       --c-ratafia:#7A3010;
+      --c-bib:    #B87333;
     }
 
     html { scroll-behavior: smooth; }
@@ -393,6 +420,7 @@
     .blanc   .accent-bar { background: var(--c-blanc); }
     .zero    .accent-bar { background: var(--c-zero); }
     .ratafia .accent-bar { background: var(--c-ratafia); }
+    .bib     .accent-bar { background: var(--c-bib); }
     .product-info { background: var(--ink2); padding: 3rem 2rem 3.5rem; display: flex; flex-direction: column; justify-content: center; }
     @media (min-width: 780px) { .product-info { width: 50%; padding: 4rem 6vw; } }
     .product-label { font-size: .58rem; letter-spacing: .3em; text-transform: uppercase; margin-bottom: .7rem; }
@@ -400,12 +428,14 @@
     .blanc   .product-label { color: #5A9A70; }
     .zero    .product-label { color: #4A80AA; }
     .ratafia .product-label { color: #C06030; }
+    .bib     .product-label { color: var(--copper); }
     .product-name { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; line-height: 1.05; color: var(--cream); margin-bottom: 1.4rem; }
     .product-rule { width: 36px; height: 1px; margin-bottom: 1.6rem; }
     .negre   .product-rule { background: var(--c-negre); }
     .blanc   .product-rule { background: var(--c-blanc); }
     .zero    .product-rule { background: var(--c-zero); }
     .ratafia .product-rule { background: var(--c-ratafia); }
+    .bib     .product-rule { background: var(--c-bib); }
     .product-desc { font-family: 'Cormorant Garamond', serif; font-size: clamp(1rem, 1.6vw, 1.2rem); line-height: 1.85; color: var(--cream2); max-width: 560px; margin-bottom: 1.6rem; }
     .product-memory { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(.95rem, 1.4vw, 1.05rem); color: var(--muted); margin-bottom: 2rem; }
     .product-tags { display: flex; flex-wrap: wrap; gap: .5rem; }
@@ -457,6 +487,7 @@
       <li><a href="#vermut-blanc" data-i18n="nav.blanc">Vermut Blanc</a></li>
       <li><a href="#aperitiu-zero" data-i18n="nav.zero">Aperitiu 0,0%</a></li>
       <li><a href="#ratafia" data-i18n="nav.ratafia">Ratafia</a></li>
+      <li><a href="#bag-in-box" data-i18n="nav.bib">Bag in Box</a></li>
       <li><a href="#contacte" data-i18n="nav.contact">Contacte</a></li>
     </ul>
     <div class="lang-switcher">
@@ -567,6 +598,27 @@
   </div>
 </section>
 
+<!-- BAG IN BOX -->
+<section id="bag-in-box" class="product bib">
+  <div class="product-photo">
+    <img src="assets/image6.jpg" alt="Remeier Bag in Box 5L Fórmules Magistrals" loading="lazy" />
+    <div class="accent-bar"></div>
+  </div>
+  <div class="product-info">
+    <p class="product-label reveal" data-i18n="bib.label">Format Professional · Bag in Box 5L</p>
+    <h2 class="product-name reveal d1" data-i18n="bib.name">Fórmules Magistrals</h2>
+    <div class="product-rule reveal d1"></div>
+    <p class="product-desc reveal d2" data-i18n="bib.desc">El Vermut Negre, el Vermut Blanc i la Ratafia del Remeier arriben ara al canal HORECA en format Bag in Box de 5 litres. Gràcies a la seva bossa interior sense contacte amb l'aire, el producte es manté sempre com acabat d'obrir, servei rere servei. Un format pensat per a bars i restaurants, més sostenible i pràctic per al dia a dia.</p>
+    <p class="product-memory reveal d3" data-i18n="bib.memory">"Sempre com acabat d'obrir."</p>
+    <div class="product-tags reveal d4">
+      <span class="tag" data-i18n="tag.horeca">Format HORECA</span>
+      <span class="tag">Bag in Box 5L</span>
+      <span class="tag" data-i18n="tag.freshalways">Sempre fresc</span>
+      <span class="tag" data-i18n="tag.vegan">Vegà</span>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACTE -->
 <section id="contacte">
   <p class="contact-name reveal">REMEIER</p>
@@ -594,7 +646,7 @@
 <script>
 const i18n = {
   ca: {
-    "nav.negre":"Vermut Negre","nav.blanc":"Vermut Blanc","nav.zero":"Aperitiu 0,0%","nav.ratafia":"Ratafia","nav.contact":"Contacte",
+    "nav.negre":"Vermut Negre","nav.blanc":"Vermut Blanc","nav.zero":"Aperitiu 0,0%","nav.ratafia":"Ratafia","nav.bib":"Bag in Box","nav.contact":"Contacte",
     "hero.kicker":"Original de La Ràpita · Penedès","hero.slogan":"L'essència de les herbes mediterrànies en clau de vi",
     "negre.label":"Aperitiu a Base de Vi · 15% Alc.","negre.name":"Vermut Negre",
     "negre.desc":"Jove i mediterrani, el Vermut Negre del Remeier neix de la maceració d'espígol, farigola i donzell en vi blanc del territori. Un vermut elegant, fresc, llarg i inspirat en una recepta ancestral del segle XIX, elaborat en clau vegana.",
@@ -608,12 +660,15 @@ const i18n = {
     "ratafia.label":"Digestiu a Base de Vi · 20% Alc.","ratafia.name":"Ratafia de Vi",
     "ratafia.desc":"Elaborada macerant plantes i espècies — anís estrellat, canyella, nou moscada i clau — directament en vi blanc d'alt grau. Els aromes anisats no provenen d'anís destil·lat, sinó de la maceració en vi, acompanyats d'un macerat de nou verda i menta fresca. Un digestiu que viatja entre les tradicions catalana, francesa i italiana. Perquè la ratafia és la pipa de la pau del Mediterrani.",
     "ratafia.memory":"\"La pastisseria de tota la vida.\"",
+    "bib.label":"Format Professional · Bag in Box 5L","bib.name":"Fórmules Magistrals",
+    "bib.desc":"El Vermut Negre, el Vermut Blanc i la Ratafia del Remeier arriben ara al canal HORECA en format Bag in Box de 5 litres. Gràcies a la seva bossa interior sense contacte amb l'aire, el producte es manté sempre com acabat d'obrir, servei rere servei. Un format pensat per a bars i restaurants, més sostenible i pràctic per al dia a dia.",
+    "bib.memory":"\"Sempre com acabat d'obrir.\"",
     "contact.origin":"Original de La Ràpita",
-    "tag.wine":"+75% Vi del Penedès","tag.lowsugar":"Baix en sucres","tag.vegan":"Vegà","tag.must":"Base de Most","tag.nopreservatives":"Sense conservants","tag.anise":"Anís macerat en vi",
+    "tag.wine":"+75% Vi del Penedès","tag.lowsugar":"Baix en sucres","tag.vegan":"Vegà","tag.must":"Base de Most","tag.nopreservatives":"Sense conservants","tag.anise":"Anís macerat en vi","tag.horeca":"Format HORECA","tag.freshalways":"Sempre fresc",
     "footer.responsible":"Consumeix amb responsabilitat"
   },
   es: {
-    "nav.negre":"Vermut Rojo","nav.blanc":"Vermut Blanco","nav.zero":"Aperitivo 0,0%","nav.ratafia":"Ratafia","nav.contact":"Contacto",
+    "nav.negre":"Vermut Rojo","nav.blanc":"Vermut Blanco","nav.zero":"Aperitivo 0,0%","nav.ratafia":"Ratafia","nav.bib":"Bag in Box","nav.contact":"Contacto",
     "hero.kicker":"Original de La Ràpita · Penedès","hero.slogan":"La esencia de las hierbas mediterráneas en clave de vino",
     "negre.label":"Aperitivo a Base de Vino · 15% Alc.","negre.name":"Vermut Rojo",
     "negre.desc":"Joven y mediterráneo, el Vermut Rojo de Remeier nace de la maceración de espliego, tomillo y ajenjo en vino blanco del territorio. Un vermut elegante, fresco, largo e inspirado en una receta ancestral del siglo XIX, elaborado de manera vegana.",
@@ -627,12 +682,15 @@ const i18n = {
     "ratafia.label":"Digestivo a Base de Vino · 20% Alc.","ratafia.name":"Ratafia de Vino",
     "ratafia.desc":"Elaborada macerando plantas y especias — anís estrellado, canela, nuez moscada y clavo — directamente en vino blanco de alta graduación. Los aromas anisados no provienen de anís destilado, sino de la maceración en vino, acompañados de un macerado de nuez verde y menta fresca. Un digestivo que viaja entre las tradiciones catalana, francesa e italiana. Porque la ratafia es la pipa de la paz del Mediterráneo.",
     "ratafia.memory":"\"La pastelería de toda la vida.\"",
+    "bib.label":"Formato Profesional · Bag in Box 5L","bib.name":"Fórmulas Magistrales",
+    "bib.desc":"El Vermut Rojo, el Vermut Blanco y la Ratafia de Remeier llegan ahora al canal HORECA en formato Bag in Box de 5 litros. Gracias a su bolsa interior sin contacto con el aire, el producto se mantiene siempre como recién abierto, servicio tras servicio. Un formato pensado para bares y restaurantes, más sostenible y práctico para el día a día.",
+    "bib.memory":"\"Siempre como recién abierto.\"",
     "contact.origin":"Original de La Ràpita",
-    "tag.wine":"+75% Vino del Penedès","tag.lowsugar":"Bajo en azúcares","tag.vegan":"Vegano","tag.must":"Base de Mosto","tag.nopreservatives":"Sin conservantes","tag.anise":"Anís macerado en vino",
+    "tag.wine":"+75% Vino del Penedès","tag.lowsugar":"Bajo en azúcares","tag.vegan":"Vegano","tag.must":"Base de Mosto","tag.nopreservatives":"Sin conservantes","tag.anise":"Anís macerado en vino","tag.horeca":"Formato HORECA","tag.freshalways":"Siempre fresco",
     "footer.responsible":"Consume con responsabilidad"
   },
   en: {
-    "nav.negre":"Red Vermouth","nav.blanc":"White Vermouth","nav.zero":"0.0% Aperitif","nav.ratafia":"Ratafia","nav.contact":"Contact",
+    "nav.negre":"Red Vermouth","nav.blanc":"White Vermouth","nav.zero":"0.0% Aperitif","nav.ratafia":"Ratafia","nav.bib":"Bag in Box","nav.contact":"Contact",
     "hero.kicker":"Original from La Ràpita · Penedès","hero.slogan":"The essence of Mediterranean herbs through the lens of wine",
     "negre.label":"Wine-Based Aperitif · 15% Alc.","negre.name":"Red Vermouth",
     "negre.desc":"Young and Mediterranean, Remeier's Red Vermouth is born from the maceration of lavender, thyme and wormwood in white wine from the territory. An elegant, fresh, long vermouth inspired by a 19th-century ancestral recipe, crafted in a vegan style.",
@@ -646,8 +704,11 @@ const i18n = {
     "ratafia.label":"Wine-Based Digestif · 20% Alc.","ratafia.name":"Wine Ratafia",
     "ratafia.desc":"Crafted by macerating botanicals and spices — star anise, cinnamon, nutmeg and cloves — directly in high-alcohol white wine. The anise aromas come not from distilled anise but from maceration in wine, accompanied by green walnut and fresh mint. A digestif that travels between the Catalan, French and Italian traditions. Because ratafia is the peace pipe of the Mediterranean.",
     "ratafia.memory":"\"The neighbourhood bakery, every Sunday.\"",
+    "bib.label":"Professional Format · Bag in Box 5L","bib.name":"Fórmules Magistrals",
+    "bib.desc":"The Red Vermouth, White Vermouth and Wine Ratafia now come to the HORECA channel in a 5-litre Bag in Box format. Thanks to its inner bag with no air contact, the product stays fresh as if just opened, pour after pour. A format designed for bars and restaurants, more sustainable and practical for everyday use.",
+    "bib.memory":"\"Always as if just opened.\"",
     "contact.origin":"Original from La Ràpita",
-    "tag.wine":"+75% Penedès Wine","tag.lowsugar":"Low in sugar","tag.vegan":"Vegan","tag.must":"Grape Must Base","tag.nopreservatives":"No preservatives","tag.anise":"Wine-macerated anise",
+    "tag.wine":"+75% Penedès Wine","tag.lowsugar":"Low in sugar","tag.vegan":"Vegan","tag.must":"Grape Must Base","tag.nopreservatives":"No preservatives","tag.anise":"Wine-macerated anise","tag.horeca":"HORECA Format","tag.freshalways":"Always fresh",
     "footer.responsible":"Drink responsibly"
   }
 };
@@ -701,6 +762,10 @@ els.forEach(el => io.observe(el));
       <article itemscope itemtype="https://schema.org/Product">
         <h3 itemprop="name">Remeier Ratafia de Vi — 20% vol.</h3>
         <p itemprop="description">Ratafia amb base vínica, més del 75% vi blanc del Penedès. Maceració d'anís estrellat, anís verd, canyella, nou moscada, clau, nou verda i menta fresca directament en vi — sense anís destil·lat. Especiada i dolça, aromes de pastisseria. El digestiu més català amb base vínica.</p>
+      </article>
+      <article itemscope itemtype="https://schema.org/Product">
+        <h3 itemprop="name">Remeier Fórmules Magistrals — Bag in Box 5L</h3>
+        <p itemprop="description">Format professional per al canal HORECA. El Vermut Negre, el Vermut Blanc i la Ratafia del Remeier disponibles en Bag in Box de 5 litres. La bossa interior sense contacte amb l'aire manté el producte sempre fresc, com acabat d'obrir.</p>
       </article>
     </section>
     <section>
